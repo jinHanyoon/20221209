@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <script src="/js/main.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.nav_menu li').hide()
+            $('.page04_list p').hide()
+            current=0;
+            a=0;
+            $('.sub_menu').click(function(e){
+                e.preventDefault()
+                $('.nav_menu li').slideToggle()
+            })
+        $('.nav_menu li').hover(function(){
+            var m=$(this).index()
+            console.log(m)
+            navM(m)
+        },function(){
+            navM02()
+        })                
+        function navM(m){
+            $('.nav_menu li a').eq(m).addClass('on')
+        }
+        function navM02(){
+            $('.nav_menu li a').removeClass('on')
+        }
+
+
+            $('.sub02_btn li').eq(0).addClass('on')
+        $('.sub02_btn li').click(function(){
+            var q= $(this).index()
+            console.log(q)
+            move(q)
+        })
+        
+        function move(q){
+        if(current == q) return;
+       var nowImg=$('.sub02_slider li').eq(current);
+       var nextImg= $('.sub02_slider li').eq(q);
+
+
+       nowImg.css({left:0}).stop().animate({left:'-100%'})
+       nextImg.css({left:'100%'}).stop().animate({left:0})
+       $('.sub02_btn li').removeClass('on')
+       $('.sub02_btn li').eq(q).addClass('on')
+       current = q;}
+
+        /*$('.page04_list p').hover(function(){
+
+            console.log(a)
+
+        },function(){
+        $('.page04_list').mouseenter(function(){
+            $('.page04_list p').hide()
+            $('.page04_list p').removeClass('on')
+        })})    */        
+        page04()
+       function page04(){
+        $('.page04_list h1').hover(function(){
+            $('.page04_list p').fadeIn(1000)
+        }
+
+       ,function(){  
+        
+        $('.page04_list').mouseenter(function(){
+            $('.page04_list p').hide()})
+       
+
+       })}
+ 
+
+        })
+    </script>
+</head>
+
+<body>    
+    <header>
+    <div class="header_in">
+    <div class="header_logo"><a href="index.html">logo</a></div>
+    <nav>
+        <div class="nav_in">
+            <ul class="nav_menu">
+            <li><a href="#">브랜드</a></li>
+            <li><a href="#">쇼핑</a></li>
+            <li><a href="#">이벤트</a></li>
+            <li><a href="#">로그인</a></li>
+            </ul>
+            <div class="sub_menu">
+                <a href="#" class="menu">메뉴</a>
+
+            </div>
+        </div>
+    </nav>
+</div>
+</header>
+<div id="wrap">
+    <div class="main">
+        <section class="sub01_se">
+            <div class="sub01">
+                <div class="sub01_text">
+                    <h1>CHERRY</h1>
+                    <h2>체리를 가득담아 만든</h2>
+                    <span>Cherry & Jam</span>
+                    <p>입안 가득 퍼지는 달콤한 체리,</p>
+                    <p>언제나 맛있게 먹을 수 있도록 잼으로도 만들었습니다</p>
+                    <p>건강한 체리, 체리잼 지금 바로 즐겨보세요</p>
+
+                </div>
+                
+            </div>
+        </section>
+        <section class="sub02_se">
+            <div class="sub02">
+                <div class="sub02_content">
+                    <ul class="sub02_list">
+                        <li class="sub02_img01"></li>
+                        
+                        <li class="sub02_img">
+                            <div class="sub02_text">
+                                <div class="sub02_title"><span>Information</span><h1>Cherry</h1></div>
+                            </div>
+                            <div class="sub02_slider1">
+                            <ul class="sub02_slider">
+                                <li>
+                                    <div class="sub02_sliderText">
+                                        <h1>STEP 01</h1>
+                                        <h2>우수 관리 인증</h2>
+                                        <p>농산물우수관리인증(GAP)을 받은</p>
+                                        <p>체리를 엄선하여 사용했습니다</p>
+                                        <p>이제 언제든 맛있게 즐겨보세요</p>
+
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="sub02_sliderText">
+                                        <h1>STEP 02</h1>
+                                        <h2>건강한 잼</h2>
+                                        <p>무착향료,무보존류,무색소의</p>
+                                        <p>건강한 체리잼</p>
+                                        <p>어떤빵에 바르셔도 즐겁게 즐기실 수 있어요</p>
+
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="sub02_sliderText">
+                                        <h1>STEP 03</h1>
+                                        <h2>최고급 품질만 사용</h2>
+                                        <p>체리팜에서 직접 만들고 </p>
+                                        <p>체리의 50% 이상을 생산하는 체리팜입니다</p>
+                                        <p>체리 과육햠량 70% (이상)</p>
+
+                                    </div>
+                                </li>
+                            
+
+                            </ul>
+                            <ul class="sub02_btn">
+                                <li></li>
+                                <li></li>
+                                <li></li>
+
+                            </ul>
+                        </div>
+                        
+                        </li>
+                        <li class="sub02_img03"></li>
+
+                    </ul>
+                </div>
+                 
+                </div>
+            </div>
+        </section>
+        <section class="sub03_se">
+            <div class="sub03">
+                <div class="sub03_content">
+                    <h1 class="sub03_title">Best service</h1>
+                    <div class="left">
+                        <ul class="left_content">
+                            <li>
+                                <div class="leftIcon">
+                                    <img src="/img/icons8-air-shipping-78.png">
+                                </div>
+                                <div class="left_text">
+                                    <h1>다양한 배송</h1>
+                                    <p>전국 어디든 배송 가능합니다</p>
+                                    <span>*해외 부가세 별도</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="leftIcon">
+                                    <img src="/img/icons8-calendar-78.png">
+                                </div>
+                                <div class="left_text">
+                                    <h1>1년 365일 즐겁게</h1>
+                                    <p>사계절 1년 365일 주문 가능합니다</p>
+                                    <span>*개인사정으로 변경 될 수 있습니다.</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="leftIcon">
+                                    <img src="/img/icons8-child-under-parental-control-78.png">
+                                </div>
+                                <div class="left_text">
+                                    <h1>남녀노소 누구나</h1>
+                                    <p>남녀노소 누구나 </p>
+                                    <p>달콤함을 즐겨보세요</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="center">
+                        <img src="/img/cherry-g7b938a015_1280.jpg">
+
+                    </div>
+                    <div class="right">
+                        <ul class="right_content">
+                            <li>
+                                <div class="rightIcon">
+                                    <img src="/img/icons8-decline-documents-78.png">
+                                </div>
+                                <div class="right_text">
+                                    <h1>주문은 간편하게</h1>
+                                    <p>클릭 한번으로 입금부터 배송까지</p>
+                                    <p>간편하게 확인해보세요</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="rightIcon">
+                                    <img src="/img/icons8-kidney-care-78.png">
+                                </div>
+                                <div class="right_text">
+                                    <h1>건강한 나를 위하여</h1>
+                                    <p>나와 가족들의 건강은 </p>
+                                    <p>체리와 함께하세요</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="rightIcon">
+                                    <img src="/img/icons8-price-tag-78.png">
+                                </div>
+                                <div class="right_text">
+                                    <h1>합리적인 가격</h1>
+                                    <p>최상급 체리를 합리적인</p>
+                                    <p> 가격으로 판매합니다</p>
+                                </div>
+                            </li>
+                        </ul>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <section class="page04_se">
+            <div class="page04">
+                <div class="page04_content">
+                    <ul class="page04_list">
+                        <li>
+                            <div class="page04_text">
+                                <h1>체리의 효능</h1>
+                                <P>1. 심장질환 예방</P>
+                                <P>2. 암 예방</P>
+                                <P>3. 체지방 감소</P>
+                                <P>4. 치매 예방</P>
+                                <P>5. 관절염, 통풍 예방</P>
+                                <P>6. 당뇨 예방</P>
+
+                            </div>
+                        </li>
+                        <li>
+                                <div class="page04_text02">
+                                    <h2>Cherry HOUSE</h2>
+                                    <div class="page04_icon">
+                                        <img src="/img/icons8-구글-로고-50.png">
+                                    </div>
+                                    <div class="page04_icon">
+                                        <img src="/img/icons8-지저귀다-30.png">
+
+                                    </div>
+                                    <div class="page04_icon">
+                                        <img src="/img/icons8-페이-스북-f-32.png">
+
+                                    </div>
+                                </div>
+                        </li>
+                        <li></li>
+
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section class="page05_se">
+            <div class="page05">
+                <h1 class="page05_title">OUR SPECIAL MENU</h1>
+                <div class="page05_content">
+                    <ul class="page05_List">
+                        <li>
+                            <img src="/img/cherries-g8074e405d_1280.jpg">
+                            <figure>
+                                <h2>체리칵테일</h2>
+                                <p>상큼한 체리를</p>
+                                <p>가장맛있는 칵테일로</p>
+                                <p>지금 바로 즐겨보세요</p>
+
+                            </figure>
+
+
+                        </li>
+                        <li>
+                            <img src="/img/cerrywa.jpg">
+                            <figure>
+                                <h2>체리와플</h2>
+                                <p>달콤한 초콜릿과</p>
+                                <p>부드러운 빵과 함께</p>
+                                <p>체리를 즐겨보세요!</p>
+                            </figure>
+
+                        </li>
+
+                        <li>
+                            <img src="/img/cherrycake.jpg">
+                            <figure>
+                                <h2>체리케이크</h2>
+                                <p>상큼하고 달콤한 과일들과</p>
+                                <p>함께 어우러진 케이크를</p>
+                                <p>지금 즐겨보세요!</p>
+                            </figure>
+
+                        </li>
+                        <li>
+                            <img src="/img/cherryjem.jpg">
+                            <figure>
+                                <h2>체리잼</h2>
+                                <p>바쁜 일상속</p>
+                                <p>딸기잼 대신 체리잼</p>
+                                <p>한번 드셔보시는거 어떤가요?</p>
+                            </figure>
+
+                        </li>
+                    
+                        <li>
+                            <img src="/img/chcc.jpg">
+                            <figure>
+                                <h2>크림체리</h2>
+                                <p>치즈와 크림</p>
+                                <p>다양한 견과류와 함께</p>
+                                <p>체리를 즐겨보세요!</p>
+                            </figure>
+
+                        </li>
+                        <li>
+                            <img src="/img/submainimg.jpg">
+                            <figure>
+                                <h2>체리라떼</h2>
+                                <p>부드럽고 달콤한 우유와</p>
+                                <p>상큼한 체리와 블루베리를</p>
+                                <p>맛있게 즐겨보세요!</p>
+                            </figure>
+
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section class="page06_se">
+            <div class="page06">
+                <ul class="page06_list">
+                    <li>
+                        <h1>1202</h1>
+                        <p>주문문의</p>
+                    </li>
+                    <li>
+                        <h1>9842</h1>
+                        <p>한달방문자</p>
+                    </li> 
+                    <li>
+                        <h1>286</h1>
+                        <p>하루 주문량</p>
+                    </li>
+                     <li>
+                        <h1>2470</h1>
+                        <p>남은 상품</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        
+        <section class="page07_se">
+            <div class="page07">  
+                <div class="page07_left">
+                    <div class="page07_left_text">
+                        <div class="page07_main">
+                <h1 class="page07_date">20<br>Aug</h1>   
+                <h1 class="page07_title">항산화 성분 풍부한 ‘체리의 효능’ </h1>    
+                <p>#심장병</p>
+                <p>#비만</p>
+                <p>#당뇨</p>
+            </div>
+            <div class="page07_main2">
+                <p>진한 붉은 색상을 띄는 체리는 활성산소를 제거하는 항산화 물질이 </P>
+                    <p>풍부하며 안토시아닌은 세포의 손상을 막고 노화 예방에 도움을 준다 </p>
+              
+          
+               
+
+            </div>
+            <div class="page07_main3">
+                <p>항산화 음식을 먹으면 왜 좋을까?  </p>
+                    <p> 우리 몸에는 산소 중 일부가 산화되면서 생긴 활성산소가 가득하다. </p>
+                <p>활성산소는 호흡이나 운동, 스트레스, 발암물질, 식품첨가물 등에 의해 </p> 
+                 <p> 생기는데 다른 세포를 공격해 각종 성인병 등을 유발시킨다.</p>
+                    <p>이런 활성산소를 제거하려면 항산화 물질이 들어 있는 </p>
+                        <p>음식을 충분히 먹는 것이 좋다.</p>
+                 
+                
+                
+ 
+             </div>
+            </div>
+                </div>
+                <div class="page07_right"></div>
+
+            </div>
+        </section>
+
+        <section class="page08_se">
+            <div class="page08">  
+                <div class="page08_right"
+                    <div class="page08_right_text">
+                        <div class="page08_main">
+                <h1 class="page08_date">25<br>Aug</h1>   
+                <h1 class="page08_title">타트체리의 효능</h1>    
+                <p>#항암효과</p>
+                <p>#수면</p>
+                <p>#과일계의 다이아몬드</p>
+            </div>
+            <div class="page08_main2">
+               <p>과육에는 11종의 비타민과 칼슘, 칼륨 같은 8종의 미네랄들이  </p> 
+               <p>다량 함유되어 있어 ‘과일계의 레드 다이아몬드’라고 불립니다. </p>
+               
+
+            </div>
+            <div class="page08_main3">
+                <p>1. 근육 회복 및 통증 해소를 돕습니다</p>                </p>
+                <p>2. 수면의 질을 높여줍니다.</p> 
+                <p>3. 관절염 및 통풍 증상을 감소시킵니다.</p>
+                <p>4. 뇌 건강을 향상시킵니다.</p>
+                <p>5. 면역력을 높여줍니다.</p>
+                <p>6. 항암 효과가 있습니다</p>
+                
+                
+ 
+             </div>
+            </div>
+            <div class="page08_left"></div>
+
+                </div>
+
+            </div>
+        </section>
+    </div>
+</div>
+
+</body>
+</html>
